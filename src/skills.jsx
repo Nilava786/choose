@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './skills.css'
 
 const Skills = () => {
+  const [isTrue, setIsTrue] = useState(false)
   return (
     <>
-    <div className='heading'>
+    <div className='heading' onClick={()=>setIsTrue(!isTrue)}>
       <h4>Select a Skill</h4>
+      
     </div>
 
+    <div style={{display:isTrue?'block':'none'}}>
     <div className='flexy-box'>
 
     <div className='cards'>
@@ -171,6 +174,8 @@ const Skills = () => {
       </div>
 
     </div>
+    </div>
+
     </>
   );
 };
